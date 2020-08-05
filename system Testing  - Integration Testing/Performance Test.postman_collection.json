@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "cedb82e0-68f9-4f6c-a167-a797b970f642",
+		"name": "Performance Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Homepage",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "22aa71c4-7743-47b0-92ca-bead10767f3e",
+						"exec": [
+							"pm.test(\"PL menampilkan halaman kurang dari 3 detik\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
